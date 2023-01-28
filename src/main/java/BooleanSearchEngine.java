@@ -36,6 +36,7 @@ public class BooleanSearchEngine implements SearchEngine {
                             PageEntry pageEntry = new PageEntry(item.getName(), i, mp.getValue());
                             List<PageEntry> pageEntryList = listWords.get(mp.getKey());
                             pageEntryList.add(pageEntry);
+                            Collections.sort(pageEntryList);
                         }
                     }
                 }

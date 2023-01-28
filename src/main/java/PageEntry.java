@@ -9,16 +9,22 @@ public class PageEntry implements Comparable<PageEntry> {
         this.count = count;
     }
 
+    public int getCount() {
+        return count;
+    }
+
     @Override
     public String toString() {
         return "pdfName " + pdfName + " page " + page + " count " + count;
     }
 
-    // TODO исправить compareTo
     @Override
     public int compareTo(PageEntry o) {
-        return 0;
+        if(count == o.getCount())
+            return 0;
+        else if(count < o.getCount())
+            return 1;
+        else
+            return -1;
     }
-
-    // ???
 }
