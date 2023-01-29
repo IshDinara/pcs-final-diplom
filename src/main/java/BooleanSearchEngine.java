@@ -13,8 +13,8 @@ public class BooleanSearchEngine implements SearchEngine {
         if (pdfsDir.isDirectory()) {
             for (File item: pdfsDir.listFiles()) {
                 var doc = new PdfDocument(new PdfReader(item));
-                // TODO исправить счетчик
-                for (int i = 1; i < 3; i++) {
+                int pages = doc.getNumberOfPages();
+                for (int i = 1; i <= pages; i++) {
                     var text = PdfTextExtractor.getTextFromPage(doc.getPage(i));
                     var words = text.split("\\P{IsAlphabetic}+");
                     Map<String, Integer> freqs = new HashMap<>();
