@@ -43,6 +43,7 @@ public class BooleanSearchEngine implements SearchEngine {
         }
     }
 
+    // TODO обработать если слово не найдено
     @Override
     public List<PageEntry> search(String word) {
         return listWords.get(word);
