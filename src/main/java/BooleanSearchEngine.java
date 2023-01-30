@@ -43,9 +43,13 @@ public class BooleanSearchEngine implements SearchEngine {
         }
     }
 
-    // TODO обработать если слово не найдено
     @Override
     public List<PageEntry> search(String word) {
-        return listWords.get(word);
+        if (listWords.containsKey(word)) {
+            return listWords.get(word);
+        } else {
+            return Collections.emptyList();
+        }
+
     }
 }
